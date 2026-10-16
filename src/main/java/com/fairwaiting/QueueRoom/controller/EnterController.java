@@ -16,13 +16,6 @@ public class EnterController
         this.passService = passService;
     }
 
-    @PostMapping("/test-generate/{userId}")
-    public ResponseEntity<String>generateTestPass(@PathVariable String userId)
-    {
-        String token = passService.createPass(userId);
-        return ResponseEntity.ok(token);
-    }
-
     @GetMapping("/{userId}")
     public ResponseEntity<String> enter(@PathVariable String userId , @RequestParam String pass)
     {
@@ -33,8 +26,7 @@ public class EnterController
             return ResponseEntity.ok("Welcome !!! You successfully entered the event. ");
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid or expired pass");
-
-
     }
+
 
 }
