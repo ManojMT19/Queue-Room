@@ -77,7 +77,7 @@ public class QueueService
         return redisTemplate.opsForZSet().rank(QUEUE_KEY , userId);
     }
 
-    public AdmissionRecord admitNextuser()
+    public AdmissionRecord admitNextUser()
     {
         ZSetOperations.TypedTuple<String> tuple = redisTemplate.opsForZSet().popMin(QUEUE_KEY);
 

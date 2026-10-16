@@ -50,7 +50,7 @@ public class QueueController
     @PostMapping("/admit")
     public ResponseEntity<?>admitNextUser()
     {
-        var record = queueService.admitNextuser();
+        var record = queueService.admitNextUser();
         if (record != null)
         {
             return ResponseEntity.ok(record);
